@@ -1,0 +1,14 @@
+{
+  "name": "whole30",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Godin, Nick Pierce",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
