@@ -1,0 +1,26 @@
+{
+  "apps": [
+    {
+      "name": "main",
+      "script": "server/main.js",
+      "watch": true,
+      "node_args": "--harmony",
+      "merge_logs": true,
+
+      "env": {
+        "NODE_ENV": "development"
+      },
+
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name": "webpack",
+      "script": "webpack",
+      "args": ["--progress", "--colors", "--watch"],
+      "watch": false,
+      "merge_logs": true
+    }
+  ]
+}
