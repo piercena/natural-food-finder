@@ -1,5 +1,8 @@
 'use strict'
 
+const ingredients = require('../data/ingredients.json').ingredients
+const _ = require('lodash')
+
 function ingredientIsASugar(str){
   var endsWithOSE = /ose$/
   var dext = /dext/
@@ -54,6 +57,22 @@ function ingredientIsASaccharide(str){
   return { result: false}
 }
 
+function checkForIngredientListWords(str){
+  var ingredientRegex;
+  var result = {}
+  _.forEach(ingredients, (value, key) => {
+    ingredientRegex = new RegExp(value);
+    if(str.match(ingredientRegex)){
+      result = { result: true, reason: "This is on the list of non-compliant foods and ingredients" }
+    }
+  })
+  if(result && result.result){
+    return result;
+  }
+  return { result: false}
+}
+
+
 function checkForKeywords (str) {
   var isSugarType = ingredientIsASugar(str)
   if(isSugarType.result){
@@ -66,6 +85,10 @@ function checkForKeywords (str) {
   var isASaccharide = ingredientIsASaccharide(str)
   if(isASaccharide.result){
     return isASaccharide
+  }
+  var containsWordFromIngredientList = checkForIngredientListWords(str)
+  if(containsWordFromIngredientList.result){
+    return containsWordFromIngredientList
   }
 
   return { result: false}
