@@ -11,7 +11,7 @@ function ingredientIsASugar(str){
   var isASugar = "this is a type of sugar."
 
   if(str.match(endsWithOSE)){
-    return { result: true, reason: str + " ends with 'ose' which means " + isASugar}
+    return { result: true, reason: "{term} ends with 'ose' which means " + isASugar}
   }
 
   if(str.match(dext)){
@@ -71,7 +71,6 @@ function checkForIngredientListWords(str){
   }
   return { result: false}
 }
-
 
 function checkForKeywords (str) {
   var isSugarType = ingredientIsASugar(str)
