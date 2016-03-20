@@ -1,0 +1,32 @@
+@import 'colors.sass'
+
+.container-fluid,
+.application,
+.application fieldset
+  width: 100%
+
+.application
+  padding-top: 20px
+
+  form
+    input, button, .form-control
+      width: 100%
+      display: block
+      margin-bottom: 20px
+
+    input[type=search]
+      padding: 3px 10px
+      border-radius: 4px
+
+      &:focus
+        border-color: $dark-green
+
+    button
+      background-color: $light-green
+      color: $main-dark
+      border-color: $light-green-accent
+
+      &:hover
+        color: $main-dark
+        background-color: $light-green-accent
+        border-color: $light-green

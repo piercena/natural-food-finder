@@ -2,12 +2,38 @@
 <html lang="en">
   <head>
     <title>Natural Food Finder</title>
+
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
 
-    Hi!
+    <header>
+      <h1><em>Natural</em> Food Finder</h1>
+    </header>
+
+    <div class="container-fluid">
+      <section class="application">
+
+        <form class="form-inline" action="/search" method="get">
+          <fieldset class="form-group">
+            <input type="search" name="term" placeholder="Search ingredients" class="form-control">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </fieldset>
+        </form>
+
+      </section>
+    </div>
+
+    <footer>
+      <h4>Natural Food Finder</h4>
+
+      <div class="descriptive-text">
+        | built by <a href="http://aarongodin.me">Aaron Godin</a>, <a href="http://github.com/piercena">Nick Pierce</a> |
+        <a href="http://github.com/piercena/natural-food-finder">Github</a>
+      </div>
+    </footer>
 
     <script src="/assets/main.js"></script>
 

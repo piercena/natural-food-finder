@@ -1,3 +1,51 @@
-// main.sass
-
 @import '~bootstrap/dist/css/bootstrap'
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic)
+@import 'colors.sass'
+@import 'application.sass'
+@import 'dimensions.sass'
+
+html,
+body
+  min-height: 100%
+
+a
+  color: $dark-green
+
+body
+  font-family: "Lato", Arial, sans-serif
+
+header
+  text-align: center
+  background: $main-dark
+  color: #fff
+  padding: 20px 0
+  font-weight: normal
+  height: $header-height
+
+  h1
+    margin: 0
+    padding: 0
+    font-size: 22px
+
+    em
+      color: $natural-green
+      font-style: normal
+
+footer
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: $footer-height
+  padding-top: 12px
+  text-align: center
+  background: $light-green
+  color: #111
+  font-size: 12px
+
+  *
+    display: inline
+
+  h4
+    font-weight: bold
+    font-size: 14px
+    font-style: italic
