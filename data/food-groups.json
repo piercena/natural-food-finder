@@ -1,55 +1,96 @@
 {
   "groups": [
     {
+      "name" : "exceptions",
+      "children": [
+        {
+          "name": "green beans",
+          "reason" : "This is far more pod than bean, and green plant matter is generally good for you."
+        },
+        {
+          "name" : "sugar snap peas",
+          "reason" : "This is far more pod than bean, and green plant matter is generally good for you."
+        },
+        {
+          "name" : "snow peas",
+          "reason" : "This is far more pod than bean, and green plant matter is generally good for you."
+        },
+        {
+          "name" : "clarified butter",
+          "reason" : "The clarification process removes the milk proteins, leaving behind pure, golden butterfat."
+        },
+        {
+          "name" : "ghee",
+          "reason" : "The clarification process removes the milk proteins, leaving behind pure, golden butterfat."
+        }
+      ]
+    },
+    {
       "name": "grains",
       "children": [
         {
-          "name" : "wheat"
+          "name" : "wheat",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "rye"
+          "name" : "rye",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "barley"
+          "name" : "barley",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "oats"
+          "name" : "oats",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "corn"
+          "name" : "corn",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "rice"
+          "name" : "rice",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "millet"
+          "name" : "millet",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "bulgur"
+          "name" : "bulgur",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "sorghum"
+          "name" : "sorghum",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "amaranth"
+          "name" : "amaranth",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "buckwheat"
+          "name" : "buckwheat",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "sprouted grains"
+          "name" : "sprouted grains",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "quinoa"
+          "name" : "quinoa",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "bran"
+          "name" : "bran",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "germ"
+          "name" : "germ",
+          "reason": "This is part of the grain family."
         },
         {
-          "name" : "starch"
+          "name" : "starch",
+          "reason": "This is part of the grain family."
         }
       ]
     },
@@ -60,66 +101,86 @@
           "name": "bean",
           "children": [
             {
-              "name": "black bean"
+              "name": "black bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             },
             {
-              "name": "red bean"
+              "name": "red bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             },
             {
-              "name": "pinto bean"
+              "name": "pinto bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             },
             {
-              "name": "navy bean"
+              "name": "navy bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             },
             {
-              "name": "white bean"
+              "name": "white bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             },
             {
-              "name": "kidney bean"
+              "name": "kidney bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             },
             {
-              "name": "lima bean"
+              "name": "lima bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             },
             {
-              "name": "fava bean"
+              "name": "fava bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             },
             {
-              "name": "refried bean"
+              "name": "refried bean",
+              "reason": "This is part of the bean family, meaning this is a legume."
             }
           ]
         },
         {
-          "name": "peas"
+          "name": "peas",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "chickpeas"
+          "name": "chickpeas",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "lentils"
+          "name": "lentils",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "peanuts"
+          "name": "peanuts",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "peanut butter"
+          "name": "peanut butter",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "soy"
+          "name": "soy",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "soy sauce"
+          "name": "soy sauce",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "miso"
+          "name": "miso",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "tofu"
+          "name": "tofu",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "tempeh"
+          "name": "tempeh",
+          "reason": "This is part of the legume family."
         },
         {
-          "name": "edamame"
+          "name": "edamame",
+          "reason": "This is part of the legume family."
         }
       ]
     },
@@ -127,32 +188,30 @@
       "name": "dairy",
       "children": [
         {
-          "name": "cream"
+          "name": "cream",
+          "reason": "This is part of the dairy family"
         },
         {
-          "name": "cheese"
+          "name": "cheese",
+          "reason": "This is part of the dairy family"
         },
         {
-          "name": "kefir"
+          "name": "kefir",
+          "reason": "This is part of the dairy family"
         },
         {
-          "name": "yogurt"
+          "name": "yogurt",
+          "reason": "This is part of the dairy family"
         },
         {
-          "name": "sour cream"
+          "name": "sour cream",
+          "reason": "This is part of the dairy family"
         },
         {
-          "name": "cheese"
-        },
-        {
-          "name": "milk",
-          "exclusions": [
-            "coconut milk",
-            "almond milk"
-          ]
+          "name": "cheese",
+          "reason": "This is part of the dairy family"
         }
       ]
     }
-
   ]
 }

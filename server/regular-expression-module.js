@@ -5,7 +5,7 @@ const foods = require("../data/food-groups.json").groups
 const _ = require('lodash')
 
 function ingredientIsASugar(str){
-  var endsWithOSE = /ose$/i
+  var endsWithOSE = /ose\s?/i
   var dext = /dext/i
   var startsWithGLU = /\bglu/i
   var sacch = /sacch/i
@@ -75,55 +75,45 @@ function checkForIngredientListWords(str){
 }
 
 function checkForFoodListWords(str, children){
-  var foodRegex
   var result = {}
-  var name
-
+  var foodRegex
   _.forEach(children, (value, key) => {
-    if(result.name){
-      return
-    }
-    name = new RegExp(value.name, "i")
-    //grains, legumes, dairy
-    if(str.match(name)){
+    foodRegex = new RegExp(value.name, "i")
+
+    if(str.match(foodRegex)){
       result = value
       return
     }
-    result = checkForFoodListWords(str, value.children)
   })
   return result
 }
 
 function checkForKeywords (str) {
-  var splitInput = str.split(" ");
   var result = {}
 
-  _.forEach(splitInput, (value, key) => {
-    if(result.result){
+  result = ingredientIsASugar(str)
+  if(result.result){
+    return result
+  }
+  result = ingredientIsASugarAlcohol(str)
+  if(result.result){
+    return result
+  }
+  result = ingredientIsASaccharide(str)
+  if(result.result){
+    return result
+  }
+  result = checkForIngredientListWords(str)
+  if(result.result){
+    return result
+  }
+  _.forEach(foods, (value, key) => {
+    if(result.name){
       return
     }
-    result = ingredientIsASugar(value)
-    if(result.result){
-      return
-    }
-    result = ingredientIsASugarAlcohol(value)
-    if(result.result){
-      return
-    }
-    result = ingredientIsASaccharide(value)
-    if(result.result){
-      return
-    }
-    result = checkForIngredientListWords(value)
-    if(result.result){
-      return
-    }
-    result = checkForFoodListWords(value, foods)
-    if(result.result){
-      return
-    }
-    return
+    result = checkForFoodListWords(str, value.children)
   })
+  
   return result
 }
 
