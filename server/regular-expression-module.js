@@ -1,6 +1,7 @@
 'use strict'
 
 const ingredients = require('../data/ingredients.json').ingredients
+const foods = require("../data/food-groups.json").groups
 const _ = require('lodash')
 
 function ingredientIsASugar(str){
@@ -58,10 +59,11 @@ function ingredientIsASaccharide(str){
 }
 
 function checkForIngredientListWords(str){
-  var ingredientRegex;
+  var ingredientRegex
   var result = {}
+
   _.forEach(ingredients, (value, key) => {
-    ingredientRegex = new RegExp(value, "i");
+    ingredientRegex = new RegExp(value, "i")
     if(str.match(ingredientRegex)){
       result = { result: true, reason: "This is on the list of non-compliant foods and ingredients" }
     }
@@ -70,6 +72,26 @@ function checkForIngredientListWords(str){
     return result;
   }
   return { result: false}
+}
+
+function checkForFoodListWords(str, children){
+  var foodRegex
+  var result = {}
+  var name
+
+  _.forEach(children, (value, key) => {
+    if(result.name){
+      return
+    }
+    name = new RegExp(value.name, "i")
+    //grains, legumes, dairy
+    if(str.match(name)){
+      result = value
+      return
+    }
+    result = checkForFoodListWords(str, value.children)
+  })
+  return result
 }
 
 function checkForKeywords (str) {
@@ -93,6 +115,10 @@ function checkForKeywords (str) {
       return
     }
     result = checkForIngredientListWords(value)
+    if(result.result){
+      return
+    }
+    result = checkForFoodListWords(value, foods)
     if(result.result){
       return
     }

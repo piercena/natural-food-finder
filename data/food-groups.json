@@ -1,0 +1,158 @@
+{
+  "groups": [
+    {
+      "name": "grains",
+      "children": [
+        {
+          "name" : "wheat"
+        },
+        {
+          "name" : "rye"
+        },
+        {
+          "name" : "barley"
+        },
+        {
+          "name" : "oats"
+        },
+        {
+          "name" : "corn"
+        },
+        {
+          "name" : "rice"
+        },
+        {
+          "name" : "millet"
+        },
+        {
+          "name" : "bulgur"
+        },
+        {
+          "name" : "sorghum"
+        },
+        {
+          "name" : "amaranth"
+        },
+        {
+          "name" : "buckwheat"
+        },
+        {
+          "name" : "sprouted grains"
+        },
+        {
+          "name" : "quinoa"
+        },
+        {
+          "name" : "bran"
+        },
+        {
+          "name" : "germ"
+        },
+        {
+          "name" : "starch"
+        }
+      ]
+    },
+    {
+      "name": "legumes",
+      "children": [
+        {
+          "name": "bean",
+          "children": [
+            {
+              "name": "black bean"
+            },
+            {
+              "name": "red bean"
+            },
+            {
+              "name": "pinto bean"
+            },
+            {
+              "name": "navy bean"
+            },
+            {
+              "name": "white bean"
+            },
+            {
+              "name": "kidney bean"
+            },
+            {
+              "name": "lima bean"
+            },
+            {
+              "name": "fava bean"
+            },
+            {
+              "name": "refried bean"
+            }
+          ]
+        },
+        {
+          "name": "peas"
+        },
+        {
+          "name": "chickpeas"
+        },
+        {
+          "name": "lentils"
+        },
+        {
+          "name": "peanuts"
+        },
+        {
+          "name": "peanut butter"
+        },
+        {
+          "name": "soy"
+        },
+        {
+          "name": "soy sauce"
+        },
+        {
+          "name": "miso"
+        },
+        {
+          "name": "tofu"
+        },
+        {
+          "name": "tempeh"
+        },
+        {
+          "name": "edamame"
+        }
+      ]
+    },
+    {
+      "name": "dairy",
+      "children": [
+        {
+          "name": "cream"
+        },
+        {
+          "name": "cheese"
+        },
+        {
+          "name": "kefir"
+        },
+        {
+          "name": "yogurt"
+        },
+        {
+          "name": "sour cream"
+        },
+        {
+          "name": "cheese"
+        },
+        {
+          "name": "milk",
+          "exclusions": [
+            "coconut milk",
+            "almond milk"
+          ]
+        }
+      ]
+    }
+
+  ]
+}
