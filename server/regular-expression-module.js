@@ -4,14 +4,14 @@ const ingredients = require('../data/ingredients.json').ingredients
 const _ = require('lodash')
 
 function ingredientIsASugar(str){
-  var endsWithOSE = /ose$/
-  var dext = /dext/
-  var startsWithGLU = /\bglu/
-  var sacch = /sacch/
+  var endsWithOSE = /ose$/i
+  var dext = /dext/i
+  var startsWithGLU = /\bglu/i
+  var sacch = /sacch/i
   var isASugar = "this is a type of sugar."
 
   if(str.match(endsWithOSE)){
-    return { result: true, reason: "{term} ends with 'ose' which means " + isASugar}
+    return { result: true, reason: str + " ends with 'ose' which means " + isASugar}
   }
 
   if(str.match(dext)){
@@ -31,8 +31,8 @@ function ingredientIsASugar(str){
 }
 
 function ingredientIsASugarAlcohol(str){
-  var endsWithITOL = /itol$/
-  var startsWithGLY = /\bgly/
+  var endsWithITOL = /itol$/i
+  var startsWithGLY = /\bgly/i
   var isASugarAlcohol = "this is a sugar alcohol"
 
   if(str.match(endsWithITOL)){
@@ -47,7 +47,7 @@ function ingredientIsASugarAlcohol(str){
 }
 
 function ingredientIsASaccharide(str){
-  var sacch = /sacch/
+  var sacch = /sacch/i
   var isASaccharide = "this is a saccharide, a binding of two types of sugar."
 
   if(str.match(sacch)){
@@ -61,7 +61,7 @@ function checkForIngredientListWords(str){
   var ingredientRegex;
   var result = {}
   _.forEach(ingredients, (value, key) => {
-    ingredientRegex = new RegExp(value);
+    ingredientRegex = new RegExp(value, "i");
     if(str.match(ingredientRegex)){
       result = { result: true, reason: "This is on the list of non-compliant foods and ingredients" }
     }
@@ -73,24 +73,32 @@ function checkForIngredientListWords(str){
 }
 
 function checkForKeywords (str) {
-  var isSugarType = ingredientIsASugar(str)
-  if(isSugarType.result){
-    return isSugarType;
-  }
-  var isSugarAlcoholType = ingredientIsASugarAlcohol(str)
-  if(isSugarAlcoholType.result){
-    return isSugarAlcoholType
-  }
-  var isASaccharide = ingredientIsASaccharide(str)
-  if(isASaccharide.result){
-    return isASaccharide
-  }
-  var containsWordFromIngredientList = checkForIngredientListWords(str)
-  if(containsWordFromIngredientList.result){
-    return containsWordFromIngredientList
-  }
+  var splitInput = str.split(" ");
+  var result = {}
 
-  return { result: false}
+  _.forEach(splitInput, (value, key) => {
+    if(result.result){
+      return
+    }
+    result = ingredientIsASugar(value)
+    if(result.result){
+      return
+    }
+    result = ingredientIsASugarAlcohol(value)
+    if(result.result){
+      return
+    }
+    result = ingredientIsASaccharide(value)
+    if(result.result){
+      return
+    }
+    result = checkForIngredientListWords(value)
+    if(result.result){
+      return
+    }
+    return
+  })
+  return result
 }
 
 module.exports = checkForKeywords
