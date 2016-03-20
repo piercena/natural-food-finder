@@ -1,32 +1,19 @@
 @import 'colors.sass'
-
-.container-fluid,
-.application,
-.application fieldset
-  width: 100%
+@import 'dimensions.sass'
 
 .application
-  padding-top: 20px
+  padding: 20px 40px
+  height: $application-height
+  display: flex
+  justify-content: center
+  align-items: center
 
-  form
-    input, button, .form-control
-      width: 100%
-      display: block
-      margin-bottom: 20px
+  .result
+    padding-top: 20px
 
-    input[type=search]
-      padding: 3px 10px
-      border-radius: 4px
+    h2
+      color: $dark-green
 
-      &:focus
-        border-color: $dark-green
-
-    button
-      background-color: $light-green
-      color: $main-dark
-      border-color: $light-green-accent
-
-      &:hover
-        color: $main-dark
-        background-color: $light-green-accent
-        border-color: $light-green
+    &.negative
+      h2
+        color: $negative-red

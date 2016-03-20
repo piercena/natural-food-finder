@@ -11,8 +11,9 @@ module.exports = function route (app) {
 
   app.get('/search', (req, res) => {
     var ingredient = req.query.term
-    var result = regexModule(ingredient)
-    res.json({ result })
+    var result = regexModule(ingredient.toLowerCase())
+    processResultModule(result, ingredient)
+    res.json(result)
   })
 
   app.get('/ingredients', (req, res) => {

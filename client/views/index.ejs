@@ -13,18 +13,35 @@
       <h1><em>Natural</em> Food Finder</h1>
     </header>
 
-    <div class="container-fluid">
-      <section class="application">
+    <section class="application">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
 
-        <form class="form-inline" action="/search" method="get">
-          <fieldset class="form-group">
-            <input type="search" name="term" placeholder="Search ingredients" class="form-control">
-            <button type="submit" class="btn btn-primary">Search</button>
-          </fieldset>
-        </form>
+            <form class="form-inline search-form" action="/search" method="get">
+                <fieldset class="form-group">
+                  <div class="input-group">
+                    <input type="search" name="term" placeholder="Search ingredients" class="form-control search-term">
+                    <span class="input-group-btn">
+                      <input type="submit" class="btn btn-primary submit-button" value="Go">
+                    </span>
+                  </div>
+                </fieldset>
+            </form>
+          </div>
+        </div>
 
-      </section>
-    </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="result negative">
+              <h2></h2>
+
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <h4>Natural Food Finder</h4>
